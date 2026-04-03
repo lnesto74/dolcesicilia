@@ -108,7 +108,7 @@ export interface HeroConfig {
 }
 
 export const heroConfig: HeroConfig = {
-  scriptText: "Handcrafted by an Italian. Not inspired—authentic.",
+  scriptText: "Crafted by an Italian chef. Authentic tiramisu, made fresh everyday.",
   mainTitle: "Layers of\nObsession",
   ctaButtonText: "Order Your Tiramisu",
   ctaTarget: "#collection",
