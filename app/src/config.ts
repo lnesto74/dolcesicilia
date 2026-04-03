@@ -664,7 +664,7 @@ export const contactFormConfig: ContactFormConfig = {
     {
       icon: "Phone",
       label: "Phone / WhatsApp",
-      value: "+65 9123 4567",
+      value: "+65 91329303",
       subtext: "Daily 10:00 AM - 9:00 PM",
     },
     {
@@ -774,7 +774,7 @@ export const footerConfig: FooterConfig = {
   ],
   contactItems: [
     { icon: "MapPin", text: "Tanjong Pagar, Singapore" },
-    { icon: "Phone", text: "+65 9123 4567" },
+    { icon: "Phone", text: "+65 91329303" },
     { icon: "Mail", text: "ciao@dolcesicilia.sg" },
   ],
   newsletterLabel: "Join Our Sweet List",
