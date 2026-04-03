@@ -57,10 +57,10 @@ export function Navigation() {
         {/* Logo */}
         <button
           onClick={() => scrollToSection('#hero')}
-          className="flex items-center gap-2 md:gap-3 group"
+          className="flex items-center gap-3 md:gap-4 group"
           aria-label={navigationConfig.brandName}
         >
-          <SicilyIcon className="w-7 h-7 md:w-8 md:h-8 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" />
+          <SicilyIcon className="w-14 h-14 md:w-16 md:h-16 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" />
           <div className="flex flex-col">
             <span className="font-serif text-base md:text-lg text-ink-800 tracking-wide leading-tight">
               {navigationConfig.brandName}
