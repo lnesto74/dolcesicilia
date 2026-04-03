@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Wine } from 'lucide-react';
 import { preloaderConfig } from '../config';
+import { SicilyIcon } from './SicilyIcon';
 
 export function Preloader({ onComplete }: { onComplete: () => void }) {
   // Null check: if config is empty, complete immediately
@@ -28,7 +28,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     >
       {/* Logo Icon */}
       <div className="preloader-text mb-6">
-        <Wine className="w-12 h-12 text-mediterranean-700" />
+        <SicilyIcon className="w-16 h-16 md:w-20 md:h-20 text-mediterranean-700" />
       </div>
 
       {/* Brand Name */}
