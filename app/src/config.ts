@@ -536,7 +536,7 @@ export const newsConfig: NewsConfig = {
       image: "/images/dolcesicilia-5.png",
       title: "A Taste That Travels Back to Italy",
       excerpt: "There is a moment, when the first spoonful touches your tongue, when time bends. The Classico does this—mascarpone so airy it barely registers as weight, espresso that lingers just long enough, cocoa that whispers rather than shouts. Chef Enzo Caruso's hand is felt in the restraint, in what is left unsaid. This is memory made edible.",
-      date: "Winter 2024",
+      date: "Winter 2026",
       category: "Feature",
     },
     {
@@ -544,7 +544,7 @@ export const newsConfig: NewsConfig = {
       image: "/images/dolcesicilia-6.png",
       title: "The Green Gold of Mount Etna",
       excerpt: "Bronte pistachios carry the volcanic soil in their flavor—earthy, intense, irreplaceable. Most tiramisu substitutes compromise. Enzo does not. Each nut is hand-selected, ground slowly to preserve its oils, folded into cream with the precision of a man who learned patience in Sicily and perfected it abroad. The result is not fusion. It is evolution.",
-      date: "Autumn 2024",
+      date: "Autumn 2026",
       category: "Craft",
     },
     {
@@ -552,7 +552,7 @@ export const newsConfig: NewsConfig = {
       image: "/images/dolcesicilia-8.png",
       title: "When Freshness Arrives at Your Door",
       excerpt: "In a city that never slows, quality delivered at speed feels radical. The 30-minute window is not a gimmick—it is engineering. Temperature-controlled transport, routes mapped to precision, timing calibrated to the minute. The tiramisu arrives as it should: cold, pristine, ready. Modern life, met with old-world standards.",
-      date: "Late Summer 2024",
+      date: "Late Summer 2026",
       category: "Experience",
     },
     {
@@ -560,7 +560,7 @@ export const newsConfig: NewsConfig = {
       image: "/images/dolcesicilia-9.png",
       title: "Craftsmanship in Every Layer",
       excerpt: "There are desserts made for volume, and desserts made for one person at a time. Dolce Sicilia is the latter. No industrial mixers. No shortcuts through chemistry. Each mascarpone fold is deliberate, each cocoa dusting applied by hand. Enzo's training—Palermo to Paris, Singapore to refinement—shows in what cannot be rushed. You taste the hours in the lightness.",
-      date: "Summer 2024",
+      date: "Summer 2026",
       category: "Artisan",
     },
   ],
