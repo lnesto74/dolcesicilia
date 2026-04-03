@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Wine, Home, BookOpen, Newspaper, Users, Mail, Grape, ShoppingBag } from 'lucide-react';
 import { navigationConfig } from '../config';
+import { SicilyIcon } from '../components/SicilyIcon';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -8,9 +9,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export function Navigation() {
-  // Null check: if config is empty, render nothing
-  if (!navigationConfig.brandName) return null;
-
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -23,7 +21,6 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -32,6 +29,8 @@ export function Navigation() {
     }
     return () => { document.body.style.overflow = ''; };
   }, [isMobileMenuOpen]);
+
+  if (!navigationConfig.brandName) return null;
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -54,16 +53,18 @@ export function Navigation() {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom flex items-center justify-between relative z-20">
         {/* Logo */}
         <button
           onClick={() => scrollToSection('#hero')}
           className="flex items-center gap-2 md:gap-3 group"
           aria-label={navigationConfig.brandName}
         >
-          <Wine className="w-7 h-7 md:w-8 md:h-8 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+          <SicilyIcon className="w-7 h-7 md:w-8 md:h-8 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" />
           <div className="flex flex-col">
-            <span className="font-serif text-lg md:text-xl text-ink-800 tracking-wide">{navigationConfig.brandName}</span>
+            <span className="font-serif text-base md:text-lg text-ink-800 tracking-wide leading-tight">
+              {navigationConfig.brandName}
+            </span>
             <span className="text-[9px] md:text-[10px] text-mediterranean-600 tracking-widest uppercase">{navigationConfig.tagline}</span>
           </div>
         </button>
@@ -149,7 +150,7 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed inset-0 bg-cream-500/98 backdrop-blur-lg transition-all duration-500 overflow-y-auto ${
+        className={`lg:hidden fixed left-0 right-0 bottom-0 z-10 bg-cream-500/98 backdrop-blur-lg transition-all duration-500 overflow-y-auto ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'

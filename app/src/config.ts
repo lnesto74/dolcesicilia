@@ -50,7 +50,7 @@ export interface NavigationConfig {
 }
 
 export const navigationConfig: NavigationConfig = {
-  brandName: "Dolce",
+  brandName: "Dolce Sicilia",
   brandSubname: "Sicilia",
   tagline: "A Spoon of Sicily",
   navLinks: [
@@ -83,9 +83,9 @@ export interface PreloaderConfig {
 }
 
 export const preloaderConfig: PreloaderConfig = {
-  brandName: "Dolce",
-  brandSubname: "Sicilia",
-  yearText: "Est. Palermo 1987",
+  brandName: "Dolce Sicilia",
+  brandSubname: "",
+  yearText: "A Spoon of Sicily",
 };
 
 // -----------------------------------------------------------------------------
