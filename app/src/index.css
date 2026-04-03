@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sicilian Brand Colors - Dolce Sicilia */
+    /* Mediterranean Blue */
+    --mediterranean-900: #003A75;
+    --mediterranean-800: #004080;
+    --mediterranean-700: #004F9F;
+    --mediterranean-600: #005FBF;
+    --mediterranean-500: #3F9CDE;
+    --mediterranean-400: #6CB5E8;
+    --mediterranean-300: #99CEF2;
+    --mediterranean-200: #C6E6FB;
+    --mediterranean-100: #E6F4FC;
+
+    /* Warm Cream */
+    --cream-900: #E8DFC8;
+    --cream-800: #EDE6D4;
+    --cream-700: #F2EDD9;
+    --cream-600: #F7F3E5;
+    --cream-500: #FDFCF0;
+    --cream-400: #FEFDF7;
+    --cream-300: #FFFEFA;
+
+    /* Soft Beige */
+    --beige-900: #C9B586;
+    --beige-800: #D4C297;
+    --beige-700: #E6D8B8;
+    --beige-600: #EBE0C8;
+    --beige-500: #F0E8D8;
+
+    /* Ink (Text) */
+    --ink-900: #1A1A1A;
+    --ink-800: #2B2B2B;
+    --ink-700: #3D3D3D;
+    --ink-600: #4F4F4F;
+    --ink-500: #616161;
+
+    /* Page background - Warm Cream */
+    --page-bg: #FDFCF0;
+
+    /* shadcn/ui variable mapping - Sicilian Theme */
+    --background: 52 50% 97%;
+    --foreground: 0 0% 17%;
+    --card: 52 40% 94%;
+    --card-foreground: 0 0% 17%;
+    --popover: 52 50% 97%;
+    --popover-foreground: 0 0% 17%;
+    --primary: 210 100% 31%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 43 30% 87%;
+    --secondary-foreground: 0 0% 17%;
+    --muted: 43 25% 90%;
+    --muted-foreground: 0 0% 38%;
+    --accent: 210 100% 31%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 79% 44%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 43 25% 85%;
+    --input: 43 25% 85%;
+    --ring: 210 100% 31%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--page-bg);
+    color: var(--ink-800);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    color: var(--ink-800);
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .font-script {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: var(--mediterranean-200);
+    color: var(--ink-800);
+  }
+}
+
+@layer components {
+  /* Button styles - Mediterranean Blue */
+  .btn-primary {
+    @apply px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300;
+    background-color: var(--mediterranean-700);
+    color: white;
+    border-radius: 0.25rem;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--mediterranean-800);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300;
+    background-color: transparent;
+    color: var(--mediterranean-700);
+    border: 1.5px solid var(--mediterranean-700);
+    border-radius: 0.25rem;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--mediterranean-700);
+    color: white;
+  }
+
+  /* Title with decorative bar - Sicilian style */
+  .has-bar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .has-bar::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--mediterranean-700);
+  }
+
+  /* Italian-style title frame */
+  .title-frame {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border: 1.5px solid var(--mediterranean-700);
+    border-radius: 0.125rem;
+  }
+
+  .title-frame::before,
+  .title-frame::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid var(--mediterranean-700);
+    background-color: var(--page-bg);
+  }
+
+  .title-frame::before {
+    top: -4px;
+    left: -4px;
+  }
+
+  .title-frame::after {
+    bottom: -4px;
+    right: -4px;
+  }
+
+  /* Decorative separator - Sicilian pattern inspired */
+  .separator-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--mediterranean-700);
+  }
+
+  .separator-ornament::before,
+  .separator-ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    max-width: 80px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--mediterranean-400),
+      transparent
+    );
+  }
+
+  /* Subtle paper texture background */
+  .bg-paper-texture {
+    background-color: var(--page-bg);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-blend-mode: soft-light;
+    background-size: 200px 200px;
+  }
+
+  /* Section with subtle border */
+  .section-bordered {
+    border-top: 1px solid var(--beige-700);
+    border-bottom: 1px solid var(--beige-700);
+  }
+
+  /* Card style - Italian packaging inspired */
+  .card-italian {
+    background-color: white;
+    border: 1px solid var(--beige-700);
+    border-radius: 0.125rem;
+    padding: 1.5rem;
+  }
+
+  /* Link style */
+  a {
+    color: var(--mediterranean-700);
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--mediterranean-800);
+  }
+
+  /* Fade-up animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slide-in-left animation */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+
+  .slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Slide-in-right animation */
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+
+  .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Scale-in animation */
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+
+  .scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Parallax container */
+  .parallax-bg {
+    will-change: transform;
+    transition: transform 0.1s linear;
+  }
+
+  /* Ken Burns effect */
+  @keyframes kenburns {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    50% {
+      transform: scale(1.08) translate(-1%, -1%);
+    }
+    100% {
+      transform: scale(1) translate(0, 0);
+    }
+  }
+
+  .kenburns {
+    animation: kenburns 12s ease-in-out infinite;
+  }
+
+  /* Hero background - subtle slow zoom breathe */
+  @keyframes hero-breathe {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .hero-kenburns {
+    animation: hero-breathe 20s ease-in-out infinite;
+  }
+
+  /* Marquee animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  /* Carousel animation */
+  .slide-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 400ms ease-out;
+  }
+
+  .slide-inactive {
+    opacity: 0.4;
+    transform: scale(0.9);
+    transition: all 400ms ease-out;
+  }
+
+  /* Preloader animation */
+  @keyframes preloader-fade {
+    0% { opacity: 0; transform: translateY(10px); }
+    30% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+
+  @keyframes preloader-line {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+  .preloader-text {
+    animation: preloader-fade 2s ease-in-out forwards;
+  }
+
+  .preloader-line {
+    animation: preloader-line 2s ease-in-out forwards;
+  }
+}
+
+@layer utilities {
+  /* Text color - Mediterranean */
+  .text-mediterranean {
+    color: var(--mediterranean-700);
+  }
+
+  .text-ink {
+    color: var(--ink-800);
+  }
+
+  /* Background overlays - lighter for cream theme */
+  .bg-overlay-dark {
+    background: linear-gradient(to bottom, rgba(253,252,240,0.7), rgba(253,252,240,0.9));
+  }
+
+  .bg-overlay-light {
+    background: linear-gradient(to bottom, rgba(253,252,240,0.5), rgba(253,252,240,0.7));
+  }
+
+  /* Section padding */
+  .section-padding {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  /* Container */
+  .container-custom {
+    max-width: 1216px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
