@@ -10,6 +10,7 @@ import { ContactForm } from './sections/ContactForm';
 import { Footer } from './sections/Footer';
 import { Preloader } from './components/Preloader';
 import { ScrollToTop } from './components/ScrollToTop';
+import { WhatsAppChat } from './components/WhatsAppChat';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,7 @@ function App() {
 
         <Footer />
         <ScrollToTop />
+        <WhatsAppChat />
       </div>
     </>
   );
