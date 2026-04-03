@@ -65,6 +65,7 @@ export const navigationConfig: NavigationConfig = {
         { name: "Arance Candite", href: "#collection" },
       ]
     },
+    { name: "Sizes & Pricing", href: "#pricing", icon: "ShoppingBag" },
     { name: "Our Story", href: "#story", icon: "BookOpen" },
     { name: "Reviews", href: "#reviews", icon: "Users" },
     { name: "Contact", href: "#contact", icon: "Mail" },
@@ -118,6 +119,89 @@ export const heroConfig: HeroConfig = {
   ],
   decorativeText: "Sicilian Craftsmanship",
   backgroundImage: "/images/dolcesicilia-7.png",
+};
+
+// -----------------------------------------------------------------------------
+// Pricing Config
+// -----------------------------------------------------------------------------
+export interface PricingPackage {
+  id: string;
+  name: string;
+  size: string;
+  price: number;
+  priceLabel: string;
+  image: string;
+  description: string;
+  features: string[];
+  featured: boolean;
+}
+
+export interface PricingConfig {
+  scriptText: string;
+  subtitle: string;
+  mainTitle: string;
+  packages: PricingPackage[];
+  additionalInfo: string;
+}
+
+export const pricingConfig: PricingConfig = {
+  scriptText: "Sizes & Pricing",
+  subtitle: "PERFECT FOR EVERY OCCASION",
+  mainTitle: "Choose Your Indulgence",
+  packages: [
+    {
+      id: "single",
+      name: "Single Portion",
+      size: "Individual Serving",
+      price: 19,
+      priceLabel: "Per Portion",
+      image: "/images/dolcesicilia-3.png",
+      description: "Perfect for one. Handcrafted layers of mascarpone, espresso, and cocoa in an elegant individual serving.",
+      features: [
+        "200g portion",
+        "Made fresh daily",
+        "Individual jar packaging",
+        "Perfect for personal indulgence"
+      ],
+      featured: false,
+    },
+    {
+      id: "1kg",
+      name: "1kg Party Size",
+      size: "Serves 6-8",
+      price: 135,
+      priceLabel: "Party Size",
+      image: "/images/dolcesicilia-5.png",
+      description: "Ideal for gatherings, celebrations, or sharing with loved ones. A full kilogram of authentic Sicilian tiramisu.",
+      features: [
+        "1kg tiramisu",
+        "Serves 6-8 people",
+        "Beautiful presentation box",
+        "Perfect for dinner parties",
+        "Complimentary serving spoons"
+      ],
+      featured: true,
+    },
+    {
+      id: "2kg",
+      name: "2kg Party Size",
+      size: "Serves 12-16",
+      price: 205,
+      priceLabel: "Large Party Size",
+      image: "/images/dolcesicilia-5.png",
+      description: "For grand celebrations. Two kilograms of handcrafted perfection to delight a crowd.",
+      features: [
+        "2kg tiramisu",
+        "Serves 12-16 people",
+        "Premium gift packaging",
+        "Ideal for events & celebrations",
+        "Complimentary serving utensils",
+        "Free delivery within Singapore"
+      ],
+      featured: false,
+    },
+  ],
+  additionalInfo: "All sizes available in Classico, Pistacchio, and Arance Candite flavors. Orders require 24-hour advance notice for optimal freshness.",
 };
 
 // -----------------------------------------------------------------------------
@@ -330,63 +414,63 @@ export interface MuseumConfig {
 }
 
 export const museumConfig: MuseumConfig = {
-  scriptText: "Our Heritage",
-  subtitle: "THREE GENERATIONS OF PASSION",
-  mainTitle: "The Story",
-  introText: "Dolce Sicilia was born from a grandmother's recipe, a daughter's dream, and a chef's obsession with perfection. This is not industrial dessert—this is handmade heritage.",
+  scriptText: "The Journey",
+  subtitle: "FROM SICILY TO SINGAPORE",
+  mainTitle: "A Story in Silence",
+  introText: "I did not learn pastry in a school. I learned it in silence.\n\nIn Sicily, desserts are not written down. They are remembered. Passed from hands to hands, from mornings to evenings, from one generation to the next.",
   timeline: [
-    { year: "1987", event: "Nonna Rosa opens her pastry shop in Palermo" },
-    { year: "2005", event: "Isabella trains under her grandmother's watchful eye" },
-    { year: "2019", event: "Dolce Sicilia opens in Singapore" },
-    { year: "2024", event: "Over 50,000 tiramisu served and counting" },
+    { year: "Sicily", event: "Learned through watching, not words" },
+    { year: "Europe", event: "Refined through discipline" },
+    { year: "Asia", event: "Found respect for craft" },
+    { year: "Singapore", event: "Tradition breathes again" },
   ],
   tabs: [
     {
       id: "heritage",
-      name: "Heritage",
+      name: "The Beginning",
       icon: "History",
-      image: "/images/heritage.png",
+      image: "/images/story.png",
       content: {
-        title: "From Palermo to Singapore",
-        description: "Every recipe in our kitchen carries the soul of Sicily. The mascarpone technique passed down through generations. The espresso blend perfected over decades. The understanding that tiramisu is not just dessert—it is love made edible.",
-        highlight: "Authentic Sicilian recipes",
+        title: "In Sicily, Time is an Ingredient",
+        description: "In my childhood, I watched more than I spoke. Cream folding into coffee. Almonds ground slowly, patiently. Nothing rushed. Nothing wasted. But life does not stay in one place.",
+        highlight: "Memory, not recipes",
       },
     },
     {
       id: "craft",
-      name: "Craft",
+      name: "The Journey",
       icon: "BookOpen",
-      image: "/images/kitchen-scene.jpg",
+      image: "/images/story.png",
       content: {
-        title: "Handmade Means Human",
-        description: "We do not use machines to mix our cream. We do not freeze our tiramisu for later. Every jar is filled, every layer is placed, every cocoa dusting is done by hand. Because you can taste the difference.",
-        highlight: "100% handmade daily",
+        title: "Finding Balance",
+        description: "I left the island carrying very little—no recipes, only memory. No certainty, only direction. I worked in kitchens far from home, where everything moved faster, cleaner, sharper. Where discipline was different. Where perfection was expected, not hoped for.",
+        highlight: "Refined by the world",
       },
     },
     {
       id: "ingredients",
-      name: "Ingredients",
+      name: "The Purpose",
       icon: "Award",
-      image: "/images/chef-portrait.jpg",
+      image: "/images/story.png",
       content: {
-        title: "Only the Finest",
-        description: "Mascarpone from Lombardy. Espresso beans from Ethiopia, roasted in Milan. Pistachios from Bronte. Cocoa from Valrhona. We source ingredients that honor the recipe—and your palate.",
-        highlight: "Premium imported ingredients",
+        title: "Craftsmanship Without Borders",
+        description: "In Asia, I found a quiet dedication to craft. A belief that doing something well is a form of respect. Singapore became the place where my journey found balance. Here, tradition could breathe again—not as nostalgia, but as something alive.",
+        highlight: "Served with purpose",
       },
     },
   ],
   openingHours: "Order 10:00 AM - 9:00 PM",
   openingHoursLabel: "Daily Ordering",
-  ctaButtonText: "Meet the Chef",
-  yearBadge: "1987",
-  yearBadgeLabel: "Family Recipe",
+  ctaButtonText: "Order Now",
+  yearBadge: "Sicily",
+  yearBadgeLabel: "To Singapore",
   quote: {
-    prefix: "La Tradizione",
-    text: "I do not make tiramisu. I continue a legacy. Every spoonful connects you to my grandmother's kitchen in Palermo.",
-    attribution: "Chef Isabella Romano",
+    prefix: "",
+    text: "Dolce Sicilia is not about reinventing tiramisu. It is about protecting its soul, while allowing it to travel. Each layer carries a memory—of Sicily, of distance, of discipline. Lighter. Cleaner. Intentional. But never disconnected from where it began.",
+    attribution: "Chef",
   },
-  founderPhotoAlt: "Chef Isabella Romano in her kitchen",
-  founderPhoto: "/images/chef-portrait.jpg",
+  founderPhotoAlt: "The story of Dolce Sicilia",
+  founderPhoto: "/images/story.png",
 };
 
 // -----------------------------------------------------------------------------

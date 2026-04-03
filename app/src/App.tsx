@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { WineShowcase } from './sections/WineShowcase';
+import { Pricing } from './sections/Pricing';
 import { WineryCarousel } from './sections/WineryCarousel';
 import { Museum } from './sections/Museum';
 import { News } from './sections/News';
@@ -27,6 +28,7 @@ function App() {
         <main>
           <Hero isReady={!isLoading} />
           <WineShowcase />
+          <Pricing />
           <WineryCarousel />
           <Museum />
           <News />

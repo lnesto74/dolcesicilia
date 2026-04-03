@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Wine, Home, BookOpen, Newspaper, Users, Mail, Grape } from 'lucide-react';
+import { Menu, X, ChevronDown, Wine, Home, BookOpen, Newspaper, Users, Mail, Grape, ShoppingBag } from 'lucide-react';
 import { navigationConfig } from '../config';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Home, BookOpen, Newspaper, Users, Mail, Grape, Wine, Menu, X, ChevronDown,
+  Home, BookOpen, Newspaper, Users, Mail, Grape, Wine, Menu, X, ChevronDown, ShoppingBag,
 };
 
 export function Navigation() {
@@ -58,13 +58,13 @@ export function Navigation() {
         {/* Logo */}
         <button
           onClick={() => scrollToSection('#hero')}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-2 md:gap-3 group"
           aria-label={navigationConfig.brandName}
         >
-          <Wine className="w-8 h-8 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+          <Wine className="w-7 h-7 md:w-8 md:h-8 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
           <div className="flex flex-col">
-            <span className="font-serif text-xl text-ink-800 tracking-wide">{navigationConfig.brandName}</span>
-            <span className="text-[10px] text-mediterranean-600 tracking-widest uppercase">{navigationConfig.tagline}</span>
+            <span className="font-serif text-lg md:text-xl text-ink-800 tracking-wide">{navigationConfig.brandName}</span>
+            <span className="text-[9px] md:text-[10px] text-mediterranean-600 tracking-widest uppercase">{navigationConfig.tagline}</span>
           </div>
         </button>
 
@@ -149,15 +149,16 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-[72px] bg-cream-500/98 backdrop-blur-lg transition-all duration-500 ${
+        className={`lg:hidden fixed inset-0 bg-cream-500/98 backdrop-blur-lg transition-all duration-500 overflow-y-auto ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'
         }`}
+        style={{ top: isScrolled ? '60px' : '76px' }}
         role="menu"
         aria-hidden={!isMobileMenuOpen}
       >
-        <div className="container-custom py-8 flex flex-col gap-2">
+        <div className="container-custom py-6 pb-20 flex flex-col gap-2">
           {navLinks.map((link, index) => {
             const IconComponent = iconMap[link.icon];
             return (

@@ -44,30 +44,32 @@ export function Museum() {
       <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-mediterranean-100 to-transparent" />
 
       <div className="container-custom relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
           {/* Left Content */}
-          <div>
+          <div className="px-4 md:px-0">
             {/* Section Header */}
-            <div className="slide-in-left mb-10">
-              <span className="font-serif italic text-2xl text-mediterranean-600 block mb-2">{museumConfig.scriptText}</span>
-              <span className="text-mediterranean-700 text-xs uppercase tracking-[0.2em] mb-4 block">
+            <div className="slide-in-left mb-8 md:mb-10">
+              <span className="font-serif italic text-xl md:text-2xl text-mediterranean-600 block mb-2">{museumConfig.scriptText}</span>
+              <span className="text-mediterranean-700 text-xs uppercase tracking-[0.2em] mb-3 md:mb-4 block">
                 {museumConfig.subtitle}
               </span>
-              <h2 className="font-serif text-h1 text-ink-800 has-bar">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-h1 text-ink-800 has-bar">
                 {museumConfig.mainTitle}
               </h2>
             </div>
 
             {/* Introduction */}
             {museumConfig.introText && (
-              <p className="fade-up text-ink-700 leading-relaxed mb-10" style={{ transitionDelay: '0.1s' }}>
-                {museumConfig.introText}
-              </p>
+              <div className="fade-up text-ink-700 leading-relaxed mb-10 whitespace-pre-line" style={{ transitionDelay: '0.1s' }}>
+                {museumConfig.introText.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4 last:mb-0">{paragraph}</p>
+                ))}
+              </div>
             )}
 
             {/* Tabs */}
             {museumConfig.tabs.length > 0 && (
-              <div className="fade-up flex flex-wrap gap-2 mb-8" style={{ transitionDelay: '0.15s' }}>
+              <div className="fade-up flex flex-wrap gap-2 mb-6 md:mb-8" style={{ transitionDelay: '0.15s' }}>
                 {museumConfig.tabs.map((tab) => {
                   const IconComponent = iconMap[tab.icon];
                   return (
@@ -75,14 +77,14 @@ export function Museum() {
                       key={tab.id}
                       onClick={() => setActiveTab(tab.id)}
                       aria-pressed={activeTab === tab.id}
-                      className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-all duration-300 border ${
+                      className={`flex items-center gap-2 px-3 md:px-4 py-2 md:py-2.5 text-xs md:text-sm transition-all duration-300 border ${
                         activeTab === tab.id
                           ? 'bg-mediterranean-700 text-white border-mediterranean-700'
                           : 'bg-white text-ink-700 hover:bg-mediterranean-100 border-beige-700'
                       }`}
                       style={{ borderRadius: '0.125rem' }}
                     >
-                      {IconComponent && <IconComponent className="w-4 h-4" />}
+                      {IconComponent && <IconComponent className="w-3 h-3 md:w-4 md:h-4" />}
                       {tab.name}
                     </button>
                   );

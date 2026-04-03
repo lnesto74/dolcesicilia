@@ -73,19 +73,19 @@ export function Hero({ isReady }: { isReady: boolean }) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom text-center py-32 lg:py-40">
+      <div className="relative z-10 container-custom text-center py-20 px-4 md:py-32 lg:py-40">
         {/* Script accent */}
         <div className={`transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <span className="font-serif italic text-4xl md:text-5xl lg:text-6xl text-cream-500">
+          <span className="font-serif italic text-2xl md:text-3xl lg:text-5xl xl:text-6xl text-cream-500">
             {heroConfig.scriptText}
           </span>
         </div>
 
         {/* Divider line */}
-        <div className={`mx-auto my-6 h-px bg-cream-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s' }} />
+        <div className={`mx-auto my-4 md:my-6 h-px bg-cream-500/50 transition-all duration-1000 ease-out ${phase >= 2 ? 'w-16 md:w-24 opacity-100' : 'w-0 opacity-0'}`} style={{ transitionDelay: '0.2s' }} />
 
         {/* Main Title */}
-        <h1 className={`font-serif text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6.5rem] text-white leading-[1.05] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
+        <h1 className={`font-serif text-4xl md:text-5xl lg:text-[5.5rem] xl:text-[6.5rem] text-white leading-[1.05] tracking-wide transition-all duration-1000 ease-out ${phase >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
           {heroConfig.mainTitle}
         </h1>
 
@@ -106,15 +106,15 @@ export function Hero({ isReady }: { isReady: boolean }) {
 
       {/* Stats with count-up */}
       {heroConfig.stats.length > 0 && (
-        <div className={`absolute bottom-20 left-0 right-0 z-10 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        <div className={`absolute bottom-12 md:bottom-20 left-0 right-0 z-10 px-4 transition-all duration-1000 ease-out ${phase >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="container-custom">
-            <div className="grid gap-8 max-w-3xl mx-auto" style={{ gridTemplateColumns: `repeat(${heroConfig.stats.length}, minmax(0, 1fr))` }}>
+            <div className="grid gap-4 md:gap-8 max-w-3xl mx-auto" style={{ gridTemplateColumns: `repeat(${heroConfig.stats.length}, minmax(0, 1fr))` }}>
               {heroConfig.stats.map((stat, index) => (
                 <div key={index} className={`text-center ${index > 0 && index < heroConfig.stats.length ? 'border-l border-white/20' : ''}`}>
-                  <div className="font-serif text-3xl md:text-4xl text-cream-500 mb-2 tabular-nums">
+                  <div className="font-serif text-2xl md:text-3xl lg:text-4xl text-cream-500 mb-1 md:mb-2 tabular-nums">
                     {counts[index]}{stat.suffix}
                   </div>
-                  <div className="text-xs md:text-sm text-white/70 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-[10px] md:text-xs lg:text-sm text-white/70 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
