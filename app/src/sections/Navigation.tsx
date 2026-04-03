@@ -43,119 +43,123 @@ export function Navigation() {
 
   const navLinks = navigationConfig.navLinks;
 
+  const navBarHeight = isScrolled ? 60 : 76;
+
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        isScrolled
-          ? 'bg-cream-500/95 backdrop-blur-md py-3 border-beige-700'
-          : 'bg-cream-500/80 backdrop-blur-sm py-5 border-transparent'
-      }`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div className="container-custom flex items-center justify-between relative z-20">
-        {/* Logo */}
-        <button
-          onClick={() => scrollToSection('#hero')}
-          className="flex items-center gap-3 md:gap-4 group"
-          aria-label={navigationConfig.brandName}
-        >
-          <SicilyIcon className="w-14 h-14 md:w-16 md:h-16 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" />
-          <div className="flex flex-col">
-            <span className="font-serif text-base md:text-lg text-ink-800 tracking-wide leading-tight">
-              {navigationConfig.brandName}
-            </span>
-            <span className="text-[9px] md:text-[10px] text-mediterranean-600 tracking-widest uppercase">{navigationConfig.tagline}</span>
-          </div>
-        </button>
-
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8" role="menubar">
-          {navLinks.map((link) => (
-              <div
-                key={link.name}
-                className="relative"
-                onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-                role="none"
-              >
-                <button
-                  onClick={() => !link.dropdown && scrollToSection(link.href)}
-                  className="flex items-center gap-1 text-sm text-ink-700 hover:text-mediterranean-700 transition-colors duration-300 py-2"
-                  role="menuitem"
-                  aria-haspopup={link.dropdown ? 'true' : undefined}
-                  aria-expanded={link.dropdown ? activeDropdown === link.name : undefined}
-                >
-                  {link.name}
-                  {link.dropdown && (
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                      activeDropdown === link.name ? 'rotate-180' : ''
-                    }`} aria-hidden="true" />
-                  )}
-                </button>
-
-                {/* Dropdown Menu */}
-                {link.dropdown && (
-                  <div
-                    className={`absolute top-full left-0 pt-2 transition-all duration-300 ${
-                      activeDropdown === link.name
-                        ? 'opacity-100 visible translate-y-0'
-                        : 'opacity-0 invisible -translate-y-2'
-                    }`}
-                    role="menu"
-                  >
-                    <div className="bg-white rounded-sm overflow-hidden min-w-[180px] border border-beige-700 shadow-lg">
-                      {link.dropdown.map((item) => (
-                        <button
-                          key={item.name}
-                          onClick={() => scrollToSection(item.href)}
-                          className="block w-full text-left px-4 py-3 text-sm text-ink-700 hover:bg-mediterranean-100 hover:text-mediterranean-700 transition-colors"
-                          role="menuitem"
-                        >
-                          {item.name}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-          ))}
-        </div>
-
-        {/* CTA Button */}
-        {navigationConfig.ctaButtonText && (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
+          isScrolled
+            ? 'bg-cream-500/95 backdrop-blur-md py-3 border-beige-700'
+            : 'bg-cream-500/80 backdrop-blur-sm py-5 border-transparent'
+        }`}
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div className="container-custom flex items-center justify-between">
+          {/* Logo */}
           <button
-            onClick={() => scrollToSection('#contact')}
-            className="hidden lg:block btn-primary"
-            aria-label={navigationConfig.ctaButtonText}
+            onClick={() => scrollToSection('#hero')}
+            className="flex items-center gap-3 md:gap-4 group"
+            aria-label={navigationConfig.brandName}
           >
-            {navigationConfig.ctaButtonText}
+            <SicilyIcon className="w-14 h-14 md:w-16 md:h-16 text-mediterranean-700 transition-transform duration-300 group-hover:scale-110" />
+            <div className="flex flex-col">
+              <span className="font-serif text-base md:text-lg text-ink-800 tracking-wide leading-tight">
+                {navigationConfig.brandName}
+              </span>
+              <span className="text-[9px] md:text-[10px] text-mediterranean-600 tracking-widest uppercase">{navigationConfig.tagline}</span>
+            </div>
           </button>
-        )}
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 text-ink-800"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8" role="menubar">
+            {navLinks.map((link) => (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                  role="none"
+                >
+                  <button
+                    onClick={() => !link.dropdown && scrollToSection(link.href)}
+                    className="flex items-center gap-1 text-sm text-ink-700 hover:text-mediterranean-700 transition-colors duration-300 py-2"
+                    role="menuitem"
+                    aria-haspopup={link.dropdown ? 'true' : undefined}
+                    aria-expanded={link.dropdown ? activeDropdown === link.name : undefined}
+                  >
+                    {link.name}
+                    {link.dropdown && (
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                        activeDropdown === link.name ? 'rotate-180' : ''
+                      }`} aria-hidden="true" />
+                    )}
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  {link.dropdown && (
+                    <div
+                      className={`absolute top-full left-0 pt-2 transition-all duration-300 ${
+                        activeDropdown === link.name
+                          ? 'opacity-100 visible translate-y-0'
+                          : 'opacity-0 invisible -translate-y-2'
+                      }`}
+                      role="menu"
+                    >
+                      <div className="bg-white rounded-sm overflow-hidden min-w-[180px] border border-beige-700 shadow-lg">
+                        {link.dropdown.map((item) => (
+                          <button
+                            key={item.name}
+                            onClick={() => scrollToSection(item.href)}
+                            className="block w-full text-left px-4 py-3 text-sm text-ink-700 hover:bg-mediterranean-100 hover:text-mediterranean-700 transition-colors"
+                            role="menuitem"
+                          >
+                            {item.name}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          {navigationConfig.ctaButtonText && (
+            <button
+              onClick={() => scrollToSection('#contact')}
+              className="hidden lg:block btn-primary"
+              aria-label={navigationConfig.ctaButtonText}
+            >
+              {navigationConfig.ctaButtonText}
+            </button>
           )}
-        </button>
-      </div>
 
-      {/* Mobile Menu */}
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2 text-ink-800 relative z-10"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu — rendered outside <nav> as a sibling to avoid z-index/overflow clipping */}
       <div
-        className={`lg:hidden fixed left-0 right-0 bottom-0 z-10 bg-cream-500/98 backdrop-blur-lg transition-all duration-500 overflow-y-auto ${
+        className={`lg:hidden fixed inset-0 z-40 bg-cream-500 transition-all duration-300 overflow-y-auto ${
           isMobileMenuOpen
             ? 'opacity-100 visible'
             : 'opacity-0 invisible pointer-events-none'
         }`}
-        style={{ top: isScrolled ? '60px' : '76px' }}
+        style={{ top: `${navBarHeight}px` }}
         role="menu"
         aria-hidden={!isMobileMenuOpen}
       >
@@ -165,8 +169,12 @@ export function Navigation() {
             return (
               <div
                 key={link.name}
-                className="animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`transition-all duration-300 ${
+                  isMobileMenuOpen
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-4'
+                }`}
+                style={{ transitionDelay: isMobileMenuOpen ? `${index * 50}ms` : '0ms' }}
               >
                 {link.dropdown ? (
                   <div>
@@ -227,6 +235,6 @@ export function Navigation() {
           )}
         </div>
       </div>
-    </nav>
+    </>
   );
 }
