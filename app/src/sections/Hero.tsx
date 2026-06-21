@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { heroConfig } from '../config';
+import { heroConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 function useCountUp(target: number, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
@@ -50,11 +50,6 @@ export function Hero({ isReady }: { isReady: boolean }) {
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); };
   }, [isReady]);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section
       id="hero"
@@ -92,14 +87,14 @@ export function Hero({ isReady }: { isReady: boolean }) {
         {/* CTA */}
         {heroConfig.ctaButtonText && (
           <div className={`mt-10 transition-all duration-700 ease-out ${phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-            <button
-              onClick={() => scrollToSection(heroConfig.ctaTarget || '#wines')}
+            <a
+              href={heroConfig.ctaTarget || WHATSAPP_CATALOG_URL}
               className="btn-primary inline-flex items-center gap-2 group"
               aria-label={heroConfig.ctaButtonText}
             >
               {heroConfig.ctaButtonText}
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </a>
           </div>
         )}
       </div>

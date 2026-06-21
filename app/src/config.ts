@@ -5,6 +5,9 @@
 // Founded by Chef Isabella Romano, third-generation pastry chef from Palermo
 // =============================================================================
 
+/** WhatsApp Business catalog — the only order channel on the marketing site. */
+export const WHATSAPP_CATALOG_URL = 'https://wa.me/c/6591329303';
+
 // -----------------------------------------------------------------------------
 // Site Config
 // -----------------------------------------------------------------------------
@@ -111,7 +114,7 @@ export const heroConfig: HeroConfig = {
   scriptText: "Crafted by an Italian chef. Authentic tiramisu, made fresh everyday.",
   mainTitle: "Layers of\nObsession",
   ctaButtonText: "Order Your Tiramisu",
-  ctaTarget: "#collection",
+  ctaTarget: WHATSAPP_CATALOG_URL,
   stats: [
     { value: 3, suffix: "", label: "Signature Flavors" },
     { value: 100, suffix: "%", label: "Handmade Daily" },

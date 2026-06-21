@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Wine, Home, BookOpen, Newspaper, Users, Mail, Grape, ShoppingBag } from 'lucide-react';
-import { navigationConfig } from '../config';
+import { navigationConfig, WHATSAPP_CATALOG_URL } from '../config';
 import { SicilyIcon } from '../components/SicilyIcon';
 
 // Icon lookup map for dynamic icon resolution from config strings
@@ -127,13 +127,13 @@ export function Navigation() {
 
           {/* CTA Button */}
           {navigationConfig.ctaButtonText && (
-            <button
-              onClick={() => scrollToSection('#contact')}
+            <a
+              href={WHATSAPP_CATALOG_URL}
               className="hidden lg:block btn-primary"
               aria-label={navigationConfig.ctaButtonText}
             >
               {navigationConfig.ctaButtonText}
-            </button>
+            </a>
           )}
 
           {/* Mobile Menu Button */}
@@ -225,13 +225,13 @@ export function Navigation() {
           })}
 
           {navigationConfig.ctaButtonText && (
-            <button
-              onClick={() => scrollToSection('#contact')}
+            <a
+              href={WHATSAPP_CATALOG_URL}
               className="btn-primary mt-6 text-center"
               role="menuitem"
             >
               {navigationConfig.ctaButtonText}
-            </button>
+            </a>
           )}
         </div>
       </div>

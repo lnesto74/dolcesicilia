@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Wine, MapPin, Phone, Mail, Instagram, Facebook, Twitter, Youtube, ArrowUp, CheckCircle } from 'lucide-react';
-import { footerConfig } from '../config';
+import { footerConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -122,10 +122,17 @@ export function Footer() {
                 <ul className="space-y-4">
                   {footerConfig.contactItems.map((item, index) => {
                     const IconComponent = iconMap[item.icon];
+                    const isPhone = item.icon === 'Phone';
                     return (
                       <li key={index} className="flex items-start gap-3">
                         {IconComponent && <IconComponent className="w-4 h-4 text-mediterranean-700 mt-0.5 flex-shrink-0" aria-hidden="true" />}
-                        <span className="text-ink-600 text-sm">{item.text}</span>
+                        {isPhone ? (
+                          <a href={WHATSAPP_CATALOG_URL} className="text-ink-600 text-sm hover:text-mediterranean-700 transition-colors">
+                            {item.text}
+                          </a>
+                        ) : (
+                          <span className="text-ink-600 text-sm">{item.text}</span>
+                        )}
                       </li>
                     );
                   })}

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Send, CheckCircle, AlertCircle, MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { contactFormConfig } from '../config';
+import { contactFormConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -127,12 +127,9 @@ export function ContactForm() {
               <div className="space-y-4" role="list" aria-label="Contact information">
                 {contactFormConfig.contactInfo.map((item) => {
                   const IconComponent = iconMap[item.icon];
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex items-start gap-4 p-4 bg-white border border-beige-700 hover:border-mediterranean-400 transition-colors"
-                      role="listitem"
-                    >
+                  const isWhatsApp = item.icon === 'Phone';
+                  const content = (
+                    <>
                       <div className="w-10 h-10 bg-mediterranean-100 flex items-center justify-center flex-shrink-0" style={{ borderRadius: '50%' }}>
                         {IconComponent && <IconComponent className="w-5 h-5 text-mediterranean-700" />}
                       </div>
@@ -141,6 +138,24 @@ export function ContactForm() {
                         <p className="text-ink-800 font-medium">{item.value}</p>
                         <p className="text-sm text-ink-500">{item.subtext}</p>
                       </div>
+                    </>
+                  );
+                  return isWhatsApp ? (
+                    <a
+                      key={item.label}
+                      href={WHATSAPP_CATALOG_URL}
+                      className="flex items-start gap-4 p-4 bg-white border border-beige-700 hover:border-mediterranean-400 transition-colors"
+                      role="listitem"
+                    >
+                      {content}
+                    </a>
+                  ) : (
+                    <div
+                      key={item.label}
+                      className="flex items-start gap-4 p-4 bg-white border border-beige-700 hover:border-mediterranean-400 transition-colors"
+                      role="listitem"
+                    >
+                      {content}
                     </div>
                   );
                 })}

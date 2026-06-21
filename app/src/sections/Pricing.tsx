@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Check, ShoppingCart } from 'lucide-react';
-import { pricingConfig } from '../config';
+import { pricingConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 export function Pricing() {
   if (!pricingConfig.mainTitle) return null;
@@ -24,11 +24,6 @@ export function Pricing() {
 
     return () => observer.disconnect();
   }, []);
-
-  const scrollToContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section
@@ -132,8 +127,8 @@ export function Pricing() {
                 )}
 
                 {/* Order Button */}
-                <button
-                  onClick={scrollToContact}
+                <a
+                  href={WHATSAPP_CATALOG_URL}
                   className={`w-full flex items-center justify-center gap-2 py-3 px-6 text-sm font-medium transition-all duration-300 ${
                     pkg.featured
                       ? 'btn-primary'
@@ -144,7 +139,7 @@ export function Pricing() {
                 >
                   <ShoppingCart className="w-4 h-4" />
                   Order Now
-                </button>
+                </a>
               </div>
             </div>
           ))}

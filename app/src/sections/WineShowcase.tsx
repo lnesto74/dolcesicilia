@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Wine, Sparkles, Thermometer, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { wineShowcaseConfig } from '../config';
+import { wineShowcaseConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -125,17 +125,14 @@ export function WineShowcase() {
             </div>
 
             {/* CTA */}
-            <button
-              onClick={() => {
-                const element = document.querySelector('#contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
+            <a
+              href={WHATSAPP_CATALOG_URL}
               className="btn-primary flex items-center gap-2 group"
-              aria-label={wineShowcaseConfig.mainTitle}
+              aria-label="Order on WhatsApp"
             >
-              {wineShowcaseConfig.mainTitle}
+              Order on WhatsApp
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </a>
           </div>
 
           {/* Center: Wine Bottle */}

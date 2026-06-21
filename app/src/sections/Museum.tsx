@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { History, Award, BookOpen } from 'lucide-react';
-import { museumConfig } from '../config';
+import { museumConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 // Icon lookup map for dynamic icon resolution from config strings
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -204,16 +204,13 @@ export function Museum() {
                     {museumConfig.openingHours && <p className="text-white text-lg">{museumConfig.openingHours}</p>}
                   </div>
                   {museumConfig.ctaButtonText && (
-                    <button
-                      onClick={() => {
-                        const element = document.querySelector('#contact');
-                        if (element) element.scrollIntoView({ behavior: 'smooth' });
-                      }}
+                    <a
+                      href={WHATSAPP_CATALOG_URL}
                       className="btn-primary text-sm px-6"
                       aria-label={museumConfig.ctaButtonText}
                     >
                       {museumConfig.ctaButtonText}
-                    </button>
+                    </a>
                   )}
                 </div>
               </div>

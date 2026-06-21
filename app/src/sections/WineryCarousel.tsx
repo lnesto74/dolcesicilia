@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
-import { wineryCarouselConfig, navigationConfig } from '../config';
+import { wineryCarouselConfig, navigationConfig, WHATSAPP_CATALOG_URL } from '../config';
 
 export function WineryCarousel() {
   // Null check: if config is empty, render nothing
@@ -193,16 +193,13 @@ export function WineryCarousel() {
 
                   {/* CTA */}
                   {navigationConfig.ctaButtonText && (
-                    <button
-                      onClick={() => {
-                        const element = document.querySelector('#contact');
-                        if (element) element.scrollIntoView({ behavior: 'smooth' });
-                      }}
+                    <a
+                      href={WHATSAPP_CATALOG_URL}
                       className="btn-secondary"
                       aria-label={navigationConfig.ctaButtonText}
                     >
                       {navigationConfig.ctaButtonText}
-                    </button>
+                    </a>
                   )}
                 </div>
               ))}
