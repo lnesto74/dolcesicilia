@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navigation } from './sections/Navigation';
 import { Hero } from './sections/Hero';
 import { WineShowcase } from './sections/WineShowcase';
@@ -11,8 +12,17 @@ import { Footer } from './sections/Footer';
 import { Preloader } from './components/Preloader';
 import { ScrollToTop } from './components/ScrollToTop';
 import { WhatsAppChat } from './components/WhatsAppChat';
+import { CustomerImport } from './pages/CustomerImport';
+import { CustomerResults } from './pages/CustomerResults';
+import { CustomerOrders } from './pages/CustomerOrders';
+import { CustomerSegments } from './pages/CustomerSegments';
+import { CustomerMessagesHub } from './pages/CustomerMessagesHub';
+import { CustomerWholesale } from './pages/CustomerWholesale';
+import { CustomerWhatsAppOrders } from './pages/CustomerWhatsAppOrders';
+import { WaTrackCustomer } from './pages/WaTrackCustomer';
+import { WaTrackDriver } from './pages/WaTrackDriver';
 
-function App() {
+function MarketingSite() {
   const [isLoading, setIsLoading] = useState(true);
 
   const handlePreloaderComplete = useCallback(() => {
@@ -41,6 +51,28 @@ function App() {
         <WhatsAppChat />
       </div>
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/customers" element={<CustomerImport />} />
+        <Route path="/customers/orders" element={<CustomerOrders />} />
+        <Route path="/customers/segments" element={<CustomerSegments />} />
+        <Route path="/customers/messages" element={<CustomerMessagesHub />} />
+        <Route path="/customers/wholesale" element={<CustomerWholesale />} />
+        <Route path="/customers/whatsapp-orders" element={<CustomerWhatsAppOrders />} />
+        <Route path="/track/driver/:token" element={<WaTrackDriver />} />
+        <Route path="/track/:orderNumber" element={<WaTrackCustomer />} />
+        <Route path="/customers/results" element={<CustomerResults />} />
+        <Route path="/customers/campaigns" element={<Navigate to="/customers/messages" replace />} />
+        <Route path="/customers/campaign" element={<Navigate to="/customers/messages" replace />} />
+        <Route path="/customers/queue" element={<Navigate to="/customers/messages" replace />} />
+        <Route path="/*" element={<MarketingSite />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

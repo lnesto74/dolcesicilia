@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Dolce Sicilia Customers",
+    "slug": "dolcesicilia-customers",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#004080"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "sg.dolcesicilia.customers",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Select screenshots to extract customer phone numbers.",
+        "NSContactsUsageDescription": "Save extracted customers to your contact list."
+      }
+    },
+    "android": {
+      "package": "sg.dolcesicilia.customers",
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES",
+        "WRITE_CONTACTS",
+        "READ_CONTACTS"
+      ]
+    },
+    "extra": {
+      "apiUrl": "http://localhost:3001"
+    }
+  }
+}

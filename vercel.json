@@ -5,6 +5,10 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/wapp",
+      "destination": "/wapp/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

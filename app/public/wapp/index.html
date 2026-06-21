@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dolce Sicilia — Order on WhatsApp</title>
+<meta http-equiv="refresh" content="3;url=https://wa.me/c/6591329303">
+<style>
+  :root { --gold:#c8902a; --green:#1f7a3d; --ink:#2a2a2a; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(160deg,#fff8ec 0%,#fdeccb 100%); color:var(--ink); text-align:center; padding:24px;
+  }
+  .card { max-width:420px; width:100%; }
+  .logo { font-size:42px; margin-bottom:8px; }
+  h1 { font-size:22px; margin:0 0 6px; }
+  p { font-size:15px; line-height:1.5; color:#5a5a5a; margin:0 0 22px; }
+  .spinner {
+    width:38px; height:38px; margin:18px auto; border:4px solid #e7d4ad;
+    border-top-color:var(--green); border-radius:50%; animation:spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .btn {
+    display:inline-block; background:var(--green); color:#fff; text-decoration:none;
+    font-size:16px; font-weight:600; padding:14px 26px; border-radius:30px;
+  }
+  .small { font-size:13px; color:#8a8a8a; margin-top:18px; }
+  .small a { color:var(--gold); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🍮</div>
+    <h1>Dolce Sicilia</h1>
+    <p>Handmade Sicilian tiramisù, fresh every day.<br>Opening WhatsApp to browse the menu &amp; order…</p>
+    <div class="spinner"></div>
+    <a class="btn" href="https://wa.me/c/6591329303">Open WhatsApp now</a>
+    <p class="small">Not redirected? <a href="https://wa.me/c/6591329303">Tap here</a> · or call <a href="tel:+6591329303">+65 9132 9303</a></p>
+  </div>
+  <script>
+    setTimeout(function () {
+      window.location.replace("https://wa.me/c/6591329303");
+    }, 1200);
+  </script>
+</body>
+</html>
