@@ -5,8 +5,8 @@
   "framework": null,
   "rewrites": [
     {
-      "source": "/wapp",
-      "destination": "/wapp/index.html"
+      "source": "/order",
+      "destination": "/order/index.html"
     },
     {
       "source": "/(.*)",

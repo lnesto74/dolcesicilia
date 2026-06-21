@@ -36,9 +36,9 @@ app.use('/api', (req, res) => {
 
 app.use(express.static(DIST, { index: false }));
 
-const WAPP_HTML = path.join(DIST, 'wapp', 'index.html');
-app.get(['/wapp', '/wapp/'], (_req, res) => {
-  res.sendFile(WAPP_HTML);
+const ORDER_HTML = path.join(DIST, 'order', 'index.html');
+app.get(['/order', '/order/'], (_req, res) => {
+  res.sendFile(ORDER_HTML);
 });
 
 // SPA fallback — never serve HTML for missing .js/.css/.map (wrong relative paths)

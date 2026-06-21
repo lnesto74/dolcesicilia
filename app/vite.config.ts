@@ -4,29 +4,29 @@ import react from "@vitejs/plugin-react"
 import { defineConfig, type Plugin } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
-function wappPagePlugin(): Plugin {
-  const wappHtml = path.resolve(__dirname, "public/wapp/index.html")
+function orderPagePlugin(): Plugin {
+  const orderHtml = path.resolve(__dirname, "public/order/index.html")
 
-  const serveWapp = (
+  const serveOrder = (
     req: { url?: string },
     res: { setHeader: (k: string, v: string) => void; end: (body: string) => void },
     next: () => void,
   ) => {
-    if (req.url !== "/wapp" && req.url !== "/wapp/") {
+    if (req.url !== "/order" && req.url !== "/order/") {
       next()
       return
     }
     res.setHeader("Content-Type", "text/html; charset=utf-8")
-    res.end(fs.readFileSync(wappHtml, "utf8"))
+    res.end(fs.readFileSync(orderHtml, "utf8"))
   }
 
   return {
-    name: "wapp-page",
+    name: "order-page",
     configureServer(server) {
-      server.middlewares.use(serveWapp)
+      server.middlewares.use(serveOrder)
     },
     configurePreviewServer(server) {
-      server.middlewares.use(serveWapp)
+      server.middlewares.use(serveOrder)
     },
   }
 }
@@ -34,7 +34,7 @@ function wappPagePlugin(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [inspectAttr(), react(), wappPagePlugin()],
+  plugins: [inspectAttr(), react(), orderPagePlugin()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
