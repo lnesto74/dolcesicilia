@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { scrollToId } from "@/lib/scroll";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export function StickyBottomBar() {
   const [visible, setVisible] = useState(false);
@@ -23,22 +24,22 @@ export function StickyBottomBar() {
       aria-label="Quick actions"
     >
       <div className="flex gap-2">
-        <button
-          type="button"
-          onClick={() => scrollToId("lead-form")}
-          className="flex-1 rounded-sm bg-pistachio py-3 text-sm font-medium text-white"
-        >
-          Become a Host
-        </button>
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center rounded-sm border border-gold/40 px-4 py-3 text-sm text-cream"
-          aria-label="Chat on WhatsApp"
+          className="flex flex-1 items-center justify-center gap-2 rounded-sm bg-[#25D366] py-3 text-sm font-medium text-white"
         >
+          <WhatsAppIcon className="h-5 w-5" />
           WhatsApp
         </a>
+        <button
+          type="button"
+          onClick={() => scrollToId("contact")}
+          className="rounded-sm border border-gold/40 px-4 py-3 text-sm text-cream"
+        >
+          Become a Host
+        </button>
       </div>
     </div>
   );

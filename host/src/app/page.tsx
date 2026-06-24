@@ -9,9 +9,10 @@ import { Reward } from "@/components/Reward";
 import { IdealFor } from "@/components/IdealFor";
 import { WhatWeNeed } from "@/components/WhatWeNeed";
 import { FAQ } from "@/components/FAQ";
-import { LeadForm } from "@/components/LeadForm";
+import { HostContact } from "@/components/HostContact";
 import { Footer } from "@/components/Footer";
 import { StickyBottomBar } from "@/components/StickyBottomBar";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 
 export default function HomePage() {
   return (
@@ -28,10 +29,11 @@ export default function HomePage() {
         <IdealFor />
         <WhatWeNeed />
         <FAQ />
-        <LeadForm />
+        <HostContact />
       </main>
       <Footer />
       <StickyBottomBar />
+      <WhatsAppFab />
     </>
   );
 }

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ScrollReveal } from "./ScrollReveal";
 import { GoldDivider } from "./GoldDivider";
+import { ShowcaseImage } from "./ShowcaseImage";
 import { hostAsset } from "@/lib/assets";
 
 export function Reward() {
@@ -32,16 +32,12 @@ export function Reward() {
             tiramisù. Taste the origin story, meet our atelier, and return with stories your
             building will remember.
           </p>
-          <div className="relative mx-auto mt-10 aspect-[16/9] max-w-2xl overflow-hidden rounded-sm border border-gold/30">
-            <Image
-              src={hostAsset("/images/reward-sicily.jpg")}
-              alt="Dolce Sicilia tiramisù in a sunlit Sicilian piazza — the origin of our craft"
-              fill
-              sizes="(max-width: 768px) 100vw, 672px"
-              className="object-cover"
-              loading="lazy"
-            />
-          </div>
+          <ShowcaseImage
+            className="mx-auto mt-10 max-w-2xl"
+            src={hostAsset("/images/reward-sicily.jpg")}
+            alt="Dolce Sicilia tiramisù in a sunlit Sicilian piazza — the origin of our craft"
+            sizes="(max-width: 768px) 100vw, 672px"
+          />
         </ScrollReveal>
       </div>
     </section>

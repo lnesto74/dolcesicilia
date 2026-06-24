@@ -1,5 +1,6 @@
 import { SicilyIcon } from "./SicilyIcon";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export function Footer() {
   const whatsappUrl = getWhatsAppUrl();
@@ -26,15 +27,13 @@ export function Footer() {
             >
               tiramisusg.com
             </a>
-            <a href="mailto:ln@ulisse.tech" className="transition-colors hover:text-navy">
-              ln@ulisse.tech
-            </a>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-navy"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-navy"
             >
+              <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
             </a>
             {igUrl && (

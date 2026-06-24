@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { isRateLimited } from "./rateLimit";
 
-const LEAD_EMAIL = "ln@ulisse.tech";
+const LEAD_EMAIL = "eyerebirth@gmail.com";
 
 type LeadPayload = {
   buildingName?: string;

@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { scrollToId } from "@/lib/scroll";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { ShowcaseImage } from "./ShowcaseImage";
 import { hostAsset } from "@/lib/assets";
 
 export function Hero() {
@@ -39,28 +40,24 @@ export function Hero() {
             >
               See how much you could earn
             </button>
-            <button
-              type="button"
-              onClick={() => scrollToId("how-it-works")}
-              className="text-sm text-gold underline-offset-4 transition-colors hover:text-cream hover:underline"
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center text-sm text-gold underline-offset-4 transition-colors hover:text-cream hover:underline sm:text-left"
             >
               It&apos;s free. It&apos;s easy. It pays.
-            </button>
+            </a>
           </div>
         </div>
 
-        <div className="relative animate-fade-up animation-delay-200">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-gold/30 shadow-2xl">
-            <Image
-              src={hostAsset("/images/hero-fridge.jpg")}
-              alt="Dolce Sicilia smart fridge in an upscale building lobby, stocked with premium Sicilian tiramisù"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent" />
-          </div>
+        <div className="animate-fade-up animation-delay-200">
+          <ShowcaseImage
+            src={hostAsset("/images/hero-fridge.jpg")}
+            alt="Dolce Sicilia host partner programme — smart fridge in a building lobby"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </div>
       </div>
     </section>

@@ -39,7 +39,7 @@ export function Calculator() {
 
   const handleReserve = () => {
     trackCalculatorCta();
-    scrollToId("lead-form");
+    scrollToId("contact");
   };
 
   return (

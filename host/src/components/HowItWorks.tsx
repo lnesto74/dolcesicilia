@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { GoldDivider } from "./GoldDivider";
 import { ScrollReveal } from "./ScrollReveal";
+import { ShowcaseImage } from "./ShowcaseImage";
 import { hostAsset } from "@/lib/assets";
 
 const steps = [
@@ -35,16 +35,12 @@ export function HowItWorks() {
         </ScrollReveal>
 
         <ScrollReveal className="mt-10">
-          <div className="relative mx-auto aspect-[21/9] max-w-4xl overflow-hidden rounded-sm border border-gold/20 shadow-lg">
-            <Image
-              src={hostAsset("/images/how-it-works.jpg")}
-              alt="Dolce Sicilia smart fridge — tap to browse, choose your tiramisù, retrieve and enjoy"
-              fill
-              sizes="(max-width: 1024px) 100vw, 896px"
-              className="object-cover object-top"
-              loading="lazy"
-            />
-          </div>
+          <ShowcaseImage
+            className="mx-auto max-w-4xl"
+            src={hostAsset("/images/how-it-works.jpg")}
+            alt="Dolce Sicilia smart fridge — tap to browse, choose your tiramisù, retrieve and enjoy"
+            sizes="(max-width: 1024px) 100vw, 896px"
+          />
         </ScrollReveal>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">

@@ -50,13 +50,14 @@ export function ProductRange() {
           {products.map((product) => (
             <ScrollReveal key={product.name}>
               <article className="flex h-full flex-col overflow-hidden rounded-sm border border-gold/20 bg-white transition-all hover:border-gold hover:shadow-md">
-                <div className="relative aspect-square">
+                <div className="border-b border-gold/10 bg-cream p-3">
                   <Image
                     src={product.image}
                     alt={product.alt}
-                    fill
+                    width={800}
+                    height={1000}
                     sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
+                    className="h-auto w-full"
                     loading="lazy"
                   />
                 </div>
