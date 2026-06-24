@@ -21,8 +21,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:py-20">
         <div className="animate-fade-up">
-          <p className="mb-3 inline-flex items-center gap-2 rounded-sm border border-gold/50 bg-gold/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
-            <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-pistachio" aria-hidden="true" />
+          <p className="mb-3 inline-flex items-center rounded-sm border border-gold/50 bg-gold/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
             Freshly made daily · Limited batch
           </p>
           <p className="mb-4 text-xs uppercase tracking-[0.25em] text-gold/80">
