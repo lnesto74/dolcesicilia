@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ScrollReveal } from "./ScrollReveal";
 import { GoldDivider } from "./GoldDivider";
 
@@ -8,7 +9,6 @@ export function Reward() {
         className="pointer-events-none absolute right-0 top-0 h-64 w-64 opacity-10"
         aria-hidden="true"
       >
-        {/* Sicilian line-art accent — Mount Etna silhouette */}
         <svg viewBox="0 0 200 200" fill="none" className="h-full w-full text-gold">
           <path
             d="M20 180 L60 80 L90 120 L120 40 L160 180 Z"
@@ -31,12 +31,16 @@ export function Reward() {
             tiramisù. Taste the origin story, meet our atelier, and return with stories your
             building will remember.
           </p>
-          {/* TODO: Replace with elegant Sicily imagery */}
-          <div
-            className="mx-auto mt-10 aspect-[21/9] max-w-2xl rounded-sm border border-gold/30 bg-gradient-to-r from-navy-light via-gold/10 to-navy-light"
-            role="img"
-            aria-label="Sicilian landscape accent — placeholder for aspirational photography"
-          />
+          <div className="relative mx-auto mt-10 aspect-[16/9] max-w-2xl overflow-hidden rounded-sm border border-gold/30">
+            <Image
+              src="/images/reward-sicily.jpg"
+              alt="Dolce Sicilia tiramisù in a sunlit Sicilian piazza — the origin of our craft"
+              fill
+              sizes="(max-width: 768px) 100vw, 672px"
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
         </ScrollReveal>
       </div>
     </section>

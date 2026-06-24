@@ -49,11 +49,10 @@ export function Hero() {
         </div>
 
         <div className="relative animate-fade-up animation-delay-200">
-          {/* TODO: Replace /hero-fridge.jpg with a real photo of the branded smart fridge in an upscale lobby */}
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-gold/30 shadow-2xl">
             <Image
-              src="/hero-fridge.jpg"
-              alt="Dolce Sicilia branded smart fridge with illuminated shelves of tiramisù cups in an upscale building lobby"
+              src="/images/hero-fridge.jpg"
+              alt="Dolce Sicilia smart fridge in an upscale building lobby, stocked with premium Sicilian tiramisù"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"

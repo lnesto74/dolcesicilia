@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { GoldDivider } from "./GoldDivider";
 import { ScrollReveal } from "./ScrollReveal";
 
@@ -30,6 +31,19 @@ export function HowItWorks() {
             Three simple steps
           </h2>
           <GoldDivider className="mx-auto mt-6 max-w-xs" />
+        </ScrollReveal>
+
+        <ScrollReveal className="mt-10">
+          <div className="relative mx-auto aspect-[21/9] max-w-4xl overflow-hidden rounded-sm border border-gold/20 shadow-lg">
+            <Image
+              src="/images/how-it-works.jpg"
+              alt="Dolce Sicilia smart fridge — tap to browse, choose your tiramisù, retrieve and enjoy"
+              fill
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover object-top"
+              loading="lazy"
+            />
+          </div>
         </ScrollReveal>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
