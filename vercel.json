@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd app && npm install && npm run build",
+  "buildCommand": "bash scripts/build-site.sh",
   "outputDirectory": "app/dist",
   "framework": null,
   "rewrites": [
@@ -9,7 +9,15 @@
       "destination": "/order/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/host",
+      "destination": "/host/index.html"
+    },
+    {
+      "source": "/vending",
+      "destination": "/host/index.html"
+    },
+    {
+      "source": "/((?!host|vending|order|api).*)",
       "destination": "/index.html"
     }
   ]
