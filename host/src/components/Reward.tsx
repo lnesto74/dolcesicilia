@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ScrollReveal } from "./ScrollReveal";
 import { GoldDivider } from "./GoldDivider";
+import { hostAsset } from "@/lib/assets";
 
 export function Reward() {
   return (
@@ -33,7 +34,7 @@ export function Reward() {
           </p>
           <div className="relative mx-auto mt-10 aspect-[16/9] max-w-2xl overflow-hidden rounded-sm border border-gold/30">
             <Image
-              src="/images/reward-sicily.jpg"
+              src={hostAsset("/images/reward-sicily.jpg")}
               alt="Dolce Sicilia tiramisù in a sunlit Sicilian piazza — the origin of our craft"
               fill
               sizes="(max-width: 768px) 100vw, 672px"

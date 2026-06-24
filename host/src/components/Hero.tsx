@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { scrollToId } from "@/lib/scroll";
+import { hostAsset } from "@/lib/assets";
 
 export function Hero() {
   return (
@@ -51,7 +52,7 @@ export function Hero() {
         <div className="relative animate-fade-up animation-delay-200">
           <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-gold/30 shadow-2xl">
             <Image
-              src="/images/hero-fridge.jpg"
+              src={hostAsset("/images/hero-fridge.jpg")}
               alt="Dolce Sicilia smart fridge in an upscale building lobby, stocked with premium Sicilian tiramisù"
               fill
               priority

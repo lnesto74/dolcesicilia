@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { SITE_URL } from "@/lib/constants";
+import { hostAsset } from "@/lib/assets";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-host.jpg",
+        url: hostAsset("/og-host.jpg"),
         width: 1200,
         height: 630,
         alt: "Host a Dolce Sicilia tiramisù fridge and earn 20% of every sale",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-host.jpg"],
+    images: [hostAsset("/og-host.jpg")],
   },
   robots: {
     index: true,

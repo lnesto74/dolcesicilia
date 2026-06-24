@@ -1,34 +1,35 @@
 import Image from "next/image";
 import { GoldDivider } from "./GoldDivider";
 import { ScrollReveal } from "./ScrollReveal";
+import { hostAsset } from "@/lib/assets";
 
 const products = [
   {
     name: "Classic Mono",
     description: "Our signature mascarpone and espresso layers — the original, perfected.",
     priceFrom: "S$14.90",
-    image: "/images/products/classic-mono.jpg",
+    image: hostAsset("/images/products/classic-mono.jpg"),
     alt: "Dolce Sicilia classic tiramisù individual portion",
   },
   {
     name: "Pistachio & Orange",
     description: "Bronte pistachio and candied Sicilian orange — a taste of Mount Etna.",
     priceFrom: "S$14.90",
-    image: "/images/products/pistachio-orange.jpg",
+    image: hostAsset("/images/products/pistachio-orange.jpg"),
     alt: "Dolce Sicilia orange tiramisù with candied Sicilian orange",
   },
   {
     name: "Sharing Portions",
     description: "Elegant jars for two — perfect for lobby lounges and break rooms.",
     priceFrom: "S$14.90",
-    image: "/images/products/sharing-portions.jpg",
+    image: hostAsset("/images/products/sharing-portions.jpg"),
     alt: "Dolce Sicilia tasting box with three signature flavours",
   },
   {
     name: "Big Sharing Trays",
     description: "Party-size trays for offices and events — our highest-value sellers.",
     priceFrom: "S$14.90",
-    image: "/images/products/sharing-trays.jpg",
+    image: hostAsset("/images/products/sharing-trays.jpg"),
     alt: "Dolce Sicilia classic tiramisù sharing portion",
   },
 ];

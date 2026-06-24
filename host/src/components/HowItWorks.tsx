@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { GoldDivider } from "./GoldDivider";
 import { ScrollReveal } from "./ScrollReveal";
+import { hostAsset } from "@/lib/assets";
 
 const steps = [
   {
@@ -36,7 +37,7 @@ export function HowItWorks() {
         <ScrollReveal className="mt-10">
           <div className="relative mx-auto aspect-[21/9] max-w-4xl overflow-hidden rounded-sm border border-gold/20 shadow-lg">
             <Image
-              src="/images/how-it-works.jpg"
+              src={hostAsset("/images/how-it-works.jpg")}
               alt="Dolce Sicilia smart fridge — tap to browse, choose your tiramisù, retrieve and enjoy"
               fill
               sizes="(max-width: 1024px) 100vw, 896px"
